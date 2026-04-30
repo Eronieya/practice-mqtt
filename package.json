@@ -1,0 +1,22 @@
+{
+  "name": "trea-demo-monorepo",
+  "version": "1.0.0",
+  "description": "Monorepo for MQTT demo applications",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "start:server": "npm start --workspace=apps/server",
+    "start:client": "npm start --workspace=apps/website",
+    "build:client": "npm run build --workspace=apps/website",
+    "format": "prettier --write \"apps/**/*.{ts,tsx,js,jsx,json,css,md}\"",
+    "format:check": "prettier --check \"apps/**/*.{ts,tsx,js,jsx,json,css,md}\""
+  },
+  "dependencies": {
+    "mqtt": "^5.5.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.8.3"
+  }
+}
